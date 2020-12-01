@@ -1,0 +1,85 @@
+{ 
+  "articles": [
+    { 
+      "type": "PLANT",
+      "name": "Abóbora",
+      "subtitle": "Curcubita spp",
+      "image": {},
+      "difficultyLevel": 2,
+      "luminosityLevel": 2,
+      "humidityLevel": 1,    
+      "growingLevel": 1,
+      "description": "Abóbora, moranga, jerimum e mogango são nomes dados popularmente a frutos de algumas espécies do gênero Cucurbita. Estas plants são bastante semelhantes entre si e seus frutos variam muito em tamanho e formato, não sendo muito fácil distinguir as espécies."
+    },
+    { 
+      "type": "PLANT",
+      "name": "Manjericão",
+      "subtitle": "Ocimum basilicum",
+      "image": {},
+      "difficultyLevel": 1,
+      "luminosityLevel": 2,
+      "humidityLevel": 1,
+      "growingLevel": 3,
+      "description": "Abóbora, moranga, jerimum e mogango são nomes dados popularmente a frutos de algumas espécies do gênero Cucurbita. Estas plants são bastante semelhantes entre si e seus frutos variam muito em tamanho e formato, não sendo muito fácil distinguir as espécies."
+    },
+    { 
+      "type": "PLANT",
+      "name": "Alho Poró",
+      "subtitle": "Allium ampeloprasum",
+      "image": {},
+      "difficultyLevel": 3,
+      "luminosityLevel": 3,
+      "humidityLevel": 1,
+      "growingLevel": 2,
+      "description": "Abóbora, moranga, jerimum e mogango são nomes dados popularmente a frutos de algumas espécies do gênero Cucurbita. Estas plants são bastante semelhantes entre si e seus frutos variam muito em tamanho e formato, não sendo muito fácil distinguir as espécies."
+    }
+  ],
+  
+  "tasks": [
+    { "name": "sowing", "dayPeriod": "DUSK", "interval": null, "intervalUnit": null, "moonFase": "WANING", "season": null, "alert": false },
+    { "name": "seedling", "dayPeriod": "MORNING", "interval": null, "intervalUnit": null, "moonFase": "WANING", "season": "FALL", "alert": false },
+    { "name": "watering", "dayPeriod": "MORNING", "interval": 1, "intervalUnit": "DAY", "moonFase": null, "season": null, "alert": true },
+    { "name": "fertilizing", "dayPeriod": null, "interval": 2, "intervalUnit": "MONTH", "moonFase": null, "season": null, "alert": true },
+    { "name": "pruning", "dayPeriod": null, "interval": 6, "intervalUnit": "MONTH", "moonFase": "WANING", "season": null, "alert": true },
+    { "name": "harvest", "dayPeriod": null, "interval": null, "intervalUnit": null, "moonFase": "FULL", "season": null, "alert": false }
+  ],
+  
+  "taskImages": [
+    { "order": 1, "file": "??", "description": "Preparando a terra", "taskImageTaskId": "??" },
+    { "order": 2, "file": "??", "video": true, "description": "Semeadura", "taskImageTaskId": "??" },
+    { "order": 3, "file": "??", "description": "Rega", "taskImageTaskId": "??" }
+  ],
+
+  "articleTasks": [
+    { "order": 1, "articleTaskArticleId": "??", "articleTaskTaskId": "??" },
+    { "order": 2, "articleTaskArticleId": "??", "articleTaskTaskId": "??" },
+    { "order": 3, "articleTaskArticleId": "??", "articleTaskTaskId": "??" },
+    { "order": 4, "articleTaskArticleId": "??", "articleTaskTaskId": "??" },
+    { "order": 5, "articleTaskArticleId": "??", "articleTaskTaskId": "??" },
+    { "order": 6, "articleTaskArticleId": "??", "articleTaskTaskId": "??" }
+  ],
+
+  "steps": [
+    { "text": "Encher as cavidades da sementeira com a terra adubada" },
+    { "text": "Fazer um furo raso com o dedo mindinho nas cavidades" },
+    { "text": "Colocar 2 sementes em cada furo e cobrir com um pouco de terra" }
+  ],
+  
+  "products": [
+    { "name": "Sementeira", "unit": "UN", "link": "https://www.lidlonline.es/es/accesorios-jardineria/p1973" },
+    { "name": "Terra adubada", "unit": "KG" },
+    { "name": "Semente de abóbora", "unit": "BAG" }
+  ],
+
+  "materials": [
+    { "order": 1, "quant": 1, "materialProductId": "??", "materialTaskId": "??" },
+    { "order": 2, "quant": 0.5, "materialProductId": "??", "materialTaskId": "??" },
+    { "order": 3, "quant": 1, "materialProductId": "??", "materialTaskId": "??" }
+  ],
+
+  "instructions": [
+    { "order": 1, "instructionStepId": "??", "instructionTaskId": "??" },
+    { "order": 2, "instructionStepId": "??", "instructionTaskId": "??" },
+    { "order": 3, "instructionStepId": "??", "instructionTaskId": "??" }
+  ]
+}

@@ -1,0 +1,61 @@
+image: node:10.14.2
+definitions:
+  steps:
+    - step: &build
+        name: Build Application
+        caches:
+          - node
+        script:
+          - touch .env.local
+          - if [[ $BITBUCKET_BRANCH = staging ]]; then AWS_COGNITO_ID=$AWS_COGNITO_ID_STAGING; fi
+          - if [[ $BITBUCKET_BRANCH = staging ]]; then AWS_USER_POOLS_ID=$AWS_USER_POOLS_ID_STAGING; fi
+          - if [[ $BITBUCKET_BRANCH = staging ]]; then AWS_USER_POOLS_WEB_ID=$AWS_USER_POOLS_WEB_ID_STAGING; fi
+          - if [[ $BITBUCKET_BRANCH = staging ]]; then AWS_ANALYTIC_APP_ID=$AWS_ANALYTIC_APP_ID_STAGING; fi
+          - if [[ $BITBUCKET_BRANCH = staging ]]; then AWS_CONTENT_BUCKET=$AWS_CONTENT_BUCKET_STAGING; fi
+          - if [[ $BITBUCKET_BRANCH = staging ]]; then AWS_APPSYNC_ENDPOINT_ID=$AWS_APPSYNC_ENDPOINT_ID_STAGING; fi
+          - if [[ $BITBUCKET_BRANCH = master ]]; then AWS_COGNITO_ID=$AWS_COGNITO_ID_PROD; fi
+          - if [[ $BITBUCKET_BRANCH = master ]]; then AWS_USER_POOLS_ID=$AWS_USER_POOLS_ID_PROD; fi
+          - if [[ $BITBUCKET_BRANCH = master ]]; then AWS_USER_POOLS_WEB_ID=$AWS_USER_POOLS_WEB_ID_PROD; fi
+          - if [[ $BITBUCKET_BRANCH = master ]]; then AWS_ANALYTIC_APP_ID=$AWS_ANALYTIC_APP_ID_PROD; fi
+          - if [[ $BITBUCKET_BRANCH = master ]]; then AWS_CONTENT_BUCKET=$AWS_CONTENT_BUCKET_PROD; fi
+          - if [[ $BITBUCKET_BRANCH = master ]]; then AWS_APPSYNC_ENDPOINT_ID=$AWS_APPSYNC_ENDPOINT_ID_PROD; fi
+          - echo "REACT_APP_AWS_PROJECT_REGION=us-east-1" >> .env.local
+          - echo "REACT_APP_AWS_COGNITO_ID="$AWS_COGNITO_ID >> .env.local
+          - echo "REACT_APP_AWS_COGNITO_REGION=us-east-1" >> .env.local
+          - echo "REACT_APP_AWS_USER_POOLS_ID="$AWS_USER_POOLS_ID >> .env.local
+          - echo "REACT_APP_AWS_USER_POOLS_WEB_ID="$AWS_USER_POOLS_WEB_ID >> .env.local
+          - echo "REACT_APP_AWS_ANALYTIC_APP_ID="$AWS_ANALYTIC_APP_ID >> .env.local
+          - echo "REACT_APP_AWS_ANALYTIC_APP_REGION=us-east-1" >> .env.local
+          - echo "REACT_APP_AWS_CONTENT_BUCKET="$AWS_CONTENT_BUCKET >> .env.local
+          - echo "REACT_APP_AWS_CONTENT_BUCKET_REGION=us-east-1" >> .env.local
+          - echo "REACT_APP_AWS_CONTENT_URL=http://$AWS_CONTENT_BUCKET.s3-website-us-east-1.amazonaws.com" >> .env.local
+          - echo "REACT_APP_AWS_APPSYNC_ENDPOINT=https://$AWS_APPSYNC_ENDPOINT_ID.appsync-api.us-east-1.amazonaws.com/graphql" >> .env.local
+          - echo "REACT_APP_AWS_APPSYNC_REGION=us-east-1" >> .env.local
+          - echo "REACT_APP_AWS_APPSYNC_AUTH_TYPE=AMAZON_COGNITO_USER_POOLS" >> .env.local
+          - echo "// THIS IS NECESSARY, DO NOT DELETE" > ./src/aws-exports.js
+          - npm install
+          - npm run build
+        artifacts:
+          - build/**
+    - step: &deploy
+        image: atlassian/pipelines-awscli
+        script:
+          - if [[ $BITBUCKET_BRANCH = staging ]]; then BUCKET=$AWS_CONTENT_BUCKET_STAGING; fi
+          - if [[ $BITBUCKET_BRANCH = master ]]; then BUCKET=$AWS_CONTENT_BUCKET_PROD; fi
+          - echo $BUCKET
+          - aws s3 sync --delete --acl public-read ./build s3://$BUCKET
+          - aws s3 cp --cache-control max-age=0 --acl public-read ./build/service-worker.js s3://$BUCKET/
+pipelines:
+  branches:
+    staging:
+      - step: *build
+      - step:
+          <<: *deploy
+          name: Deploy em staging
+          deployment: staging
+    master:
+      - step: *build
+      - step:
+          <<: *deploy
+          name: Deploy em produção
+          deployment: production

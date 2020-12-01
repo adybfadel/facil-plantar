@@ -1,0 +1,234 @@
+enum Type {
+  PLANT
+  RECEIPT
+  PHYTO
+  MANUAL
+  MY_ARTICLE
+  MY_OWN
+}
+
+enum Unit {
+  UN
+  KG
+  BAG
+  MT
+  MT2
+  HOUR
+  DAY
+  MONTH
+}
+
+enum DayPeriod {
+  DAWN
+  MORNING
+  NOON
+  AFTERNOON
+  DUSK
+  NIGHT
+}
+
+enum Season {
+  SPRING
+  SUMMER
+  FALL
+  WINTER
+}
+
+enum MoonFase {
+  WANING
+  NEW
+  WAXING
+  FULL
+}
+
+enum Visibility {
+  public
+  private
+}
+
+enum Growth {
+  growth
+  seed
+  seedling
+  flowering
+  adult
+}
+
+enum Health {
+  health
+  healthy
+  dryOut
+  leafDrop
+  fungus
+  insect
+}
+
+enum Action {
+  watering
+  fertilizing
+  pruning
+  harvest
+  note
+  update
+}
+
+type S3Object {
+  bucket: String!
+  key: String!
+  region: String!
+}
+
+type Location {
+  lat: Float
+  lon: Float
+}
+
+type Search @model {
+  id: ID!
+  type: Type!
+  key: String!
+  title: String!
+  items: [SearchItem!]! @connection(name: "SearchSearchItems", sortField: "order")
+}
+
+type SearchItem @model {
+  id: ID!
+  order: Int
+  section: String
+  subsection: String
+  content: String!
+  search: Search! @connection(name: "SearchSearchItems")
+}
+
+type Manual @model {
+  id: ID!
+  type: Type!
+  title: String
+  subtitle: String
+  content: String!
+  image: S3Object  
+}
+
+type Article @model {
+  id: ID!
+  type: Type!
+  name: String!
+  subtitle: String
+  description: String!
+  image: S3Object!
+  difficultyLevel: Int
+  luminosityLevel: Int
+  humidityLevel: Int
+  growingLevel: Int
+  tasks: [ArticleTask!] @connection(name: "ArticleArticleTasks", sortField: "order")
+  myArticles: [MyArticle!] @connection(name: "ArticleMyArticles")
+}
+
+type Task @model {
+  id: ID!
+  name: String!
+  materials: [Material!] @connection(name: "TaskMaterials", sortField: "order")
+  instructions: [Instruction!] @connection(name: "TaskInstructions", sortField: "order")
+  note: String
+  season: Season
+  dayPeriod: DayPeriod
+  moonFase: MoonFase
+  interval: Int
+  intervalUnit: Unit
+  alert: Boolean
+  images: [TaskImage!] @connection(name: "TaskImages", sortField: "order")
+  articles: [ArticleTask!] @connection(name: "TaskArticleTasks")
+}
+
+type TaskImage @model {
+  id: ID!
+  order: Int
+  file: S3Object!
+  video: Boolean
+  description: String
+  task: Task! @connection(name: "TaskImages")
+}
+
+type ArticleTask @model {
+  id: ID!
+  order: Int!
+  article: Article! @connection(name: "ArticleArticleTasks")
+  task: Task! @connection(name: "TaskArticleTasks")
+}
+
+type Material @model {
+  id: ID!
+  order: Int!
+  quant: Float!
+  product: Product! @connection(name: "MaterialsProduct")
+  task: Task! @connection(name: "TaskMaterials")
+}
+
+type Product @model {
+  id: ID!
+  name: String!
+  unit: Unit!
+  cost: Float
+  price: Float
+  link: AWSURL
+  materials: [Material!] @connection(name: "MaterialsProduct")
+}
+
+type Instruction @model {
+  id: ID!
+  order: Int!
+  step: Step! @connection(name: "InstructionsStep")
+  task: Task! @connection(name: "TaskInstructions")
+}
+
+type Step @model {
+  id: ID!
+  text: String!
+  instructions: [Instruction!] @connection(name: "InstructionsStep")
+}
+
+type MyArticle @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  have: Boolean
+  favorite: Boolean
+  myImage: S3Object
+  article: Article! @connection(name: "ArticleMyArticles")
+  myOwns: [MyOwn!] @connection(name: "MyArticleMyOwns")
+}
+
+type MyOwn @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  ident: String
+  location: Location
+  look: Int
+  growth: Growth
+  health: Health
+  myArticle: MyArticle! @connection(name: "MyArticleMyOwns")
+  myImages: [MyImage!] @connection(name: "MyOwnMyImages")
+  myNotes: [MyNote!] @connection(name: "MyOwnMyNotes")
+  createdAt: AWSDateTime
+}
+
+type MyNote @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  dateTime: AWSDateTime
+  action: Action
+  note: String
+  look: Int
+  growth: Growth
+  health: Health
+  myImage: MyImage @connection(name: "MyNoteMyImage")
+  myOwn: MyOwn! @connection(name: "MyOwnMyNotes")
+}
+
+type MyImage @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  title: String
+  file: S3Object!
+  main: Boolean
+  video: Boolean
+  visibility: Visibility
+  description: String
+  myOwn: MyOwn @connection(name: "MyOwnMyImages")
+  myNote: MyNote @connection(name: "MyNoteMyImage")
+}

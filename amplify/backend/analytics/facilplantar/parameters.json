@@ -1,0 +1,20 @@
+{
+    "appName": "FacilPlantar",
+    "roleName": "pinpointLambdaRole2e958723",
+    "cloudWatchPolicyName": "cloudWatchPolicy2e958723",
+    "pinpointPolicyName": "pinpointPolicy2e958723",
+    "authPolicyName": "pinpoint_amplify_2e958723",
+    "unauthPolicyName": "pinpoint_amplify_2e958723",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}

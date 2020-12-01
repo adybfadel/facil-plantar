@@ -1,0 +1,20 @@
+{
+  "develop": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-facil-plantar-develop-145352-authRole",
+      "UnauthRoleArn": "arn:aws:iam::998850363250:role/amplify-facil-plantar-develop-145352-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::998850363250:role/amplify-facil-plantar-develop-145352-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-facil-plantar-develop-145352-deployment",
+      "UnauthRoleName": "amplify-facil-plantar-develop-145352-unauthRole",
+      "StackName": "amplify-facil-plantar-develop-145352",
+      "StackId": "arn:aws:cloudformation:eu-central-1:998850363250:stack/amplify-facil-plantar-develop-145352/7e9792b0-3313-11eb-a7a5-020fe99366ac",
+      "AmplifyAppId": "d3bar81omxeyzo"
+    },
+    "categories": {
+      "auth": {
+        "cognitoa6bf6348": {}
+      }
+    }
+  }
+}

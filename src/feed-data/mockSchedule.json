@@ -1,0 +1,47 @@
+[
+  {
+    "task": "water",
+    "myOwnId": "dc7e3b60-1c6e-4f1c-ad6d-55a8691d1bb5",
+    "myOwnIdent": "Abobora",
+    "createdAt": "2019-06-12T09:41:42.510Z",
+    "dayPeriod": "MORNING",
+    "interval": 1,
+    "intervalUnit": "DAY",
+    "moonFase": null,
+    "season": null
+  },
+  {
+    "task": "harvest",
+    "myOwnId": "dc7e3b60-1c6e-4f1c-ad6d-55a8691d1bb5",
+    "myOwnIdent": "Abobora",
+    "createdAt": "2019-06-12T09:41:42.510Z",
+    "dayPeriod": "DUSK",
+    "interval": 15,
+    "intervalUnit": "DAY",
+    "moonFase": null,
+    "season": null
+  },
+  {
+    "task": "fertilize",
+    "myOwnId": "dc7e3b60-1c6e-4f1c-ad6d-55a8691d1bb5",
+    "myOwnIdent": "Abobora",
+    "createdAt": "2019-06-12T09:41:42.510Z",
+    "lastTime": "2019-06-26T20:54:42.510Z",
+    "dayPeriod": "AFTERNOON",
+    "interval": 12,
+    "intervalUnit": "HOUR",
+    "moonFase": null,
+    "season": null
+  },
+  {
+    "task": "prune",
+    "myOwnId": "dc7e3b60-1c6e-4f1c-ad6d-55a8691d1bb5",
+    "myOwnIdent": "Abobora",
+    "createdAt": "2019-05-25T10:41:42.510Z",
+    "dayPeriod": "DUSK",
+    "interval": 1,
+    "intervalUnit": "MONTH",
+    "moonFase": null,
+    "season": null
+  }
+]

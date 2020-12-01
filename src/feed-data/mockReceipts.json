@@ -1,0 +1,150 @@
+[
+  { 
+    "id": "001",
+    "name": "Abóbora Recheada",
+    "author": "Tudo Gostoso",
+    "mainImage": "https://img.itdg.com.br/tdg/images/recipes/000/017/139/573/573_original.jpg?mode=crop&width=370&height=278",
+    "tags": ["abobora", "recheada"],
+    "difficultyLevel": 2,
+    "preparationTime": 60,
+    "preparationUnit": "minute",
+    "yieldsPortion": 6,
+    "description": "Abóbora recheada...",
+    "ingredients": [
+      "meia abóbora japonesa média",
+      "1 colher (chá) de óleo",
+      "meia cebola picada",
+      "1 colher (chá) de sal",
+      "250 g de queijo minas frescal light cortado em cubos pequenos",
+      "250 g de peito de peru light cortado em cubos pequenos",
+      "1 xícara (chá) de maionese HELLMANN?S light",
+      "1 colher (chá) de salsinha picada",
+      "2 claras",
+      "1 colher (sopa) de queijo parmesão light ralado"
+    ],
+    "preparation": [
+      "Retire as sementes da abóbora",
+      "Em uma panela grande, coloque a abóbora, cubra com água e cozinhe por 30 minutos ou até ficar macia",
+      "Escorra, retire com cuidado a polpa e reserve a casca",
+      "Preaqueça o forno em temperatura média (180°C)",
+      "Em uma panela média, aqueça o óleo em fogo médio e doure a cebola",
+      "Junte a polpa da abóbora reservada e o sal",
+      "Refogue por 2 minutos",
+      "Acrescente o queijo, o peito de peru, metade da maionese HELLMANN?S light e a salsinha",
+      "Misture e transfira para a abóbora reservada",
+      "Coloque-a em uma assadeira média (33 x 23 cm) e reserve",
+      "Na batedeira, bata as claras em neve",
+      "Misture delicadamente o restante da maionese HELLMANN?S light, sem bater",
+      "Espalhe sobre o recheio da abóbora e polvilhe o queijo ralado",
+      "Leve ao forno por 20 minutos ou até dourar",
+      "Sirva em seguida"
+    ],
+    "nutritionalInfo": "Aporte de vitamina A, complexo B, fósforo, cálcio e a semente é muito rica em ferro. Tem poucas calorias e é de fácil digestão.",
+    "createdAt": 1517512756,
+    "updatedAt": 1517512756
+  },
+  { 
+    "id": "002",
+    "name": "Bruschetta",
+    "author": "Valdirene Santana dos Anjos",
+    "mainImage": "https://img.itdg.com.br/tdg/images/recipes/000/003/876/77323/77323_original.jpg?mode=crop&width=100&height=75",
+    "tags": ["bruscheta","aperitivo", "antepasto"],
+    "difficultyLevel": 2,
+    "preparationTime": 40,
+    "preparationUnit": "minute",
+    "yieldsPortion": 6,
+    "description": "Ideal para ....",
+    "ingredients": [
+      "fatias de pão italiano ou baguete",
+      "2 tomates bem maduros",
+      "1/2 xicara de azeite + quanto baste para regar o pão",
+      "1 dente de alho",
+      "1 colher (sopa) de orégano",
+      "folhas de majericão",
+      "sal a gosto",
+      "fatias de mussarela de búfala (opcional)"
+    ],
+    "preparation": [
+      "Corte os tomates em cubinhos e amasse o dente de alho",
+      "Em um recipiente, junte-os ao azeite, misturando bem",
+      "Adicione o manjericão, o orégano e o sal e mexa novamente",
+      "Reserve",
+      "Regue as fatias de pão com azeite a gosto e leve-as ao forno até dourarem",
+      "Sobre as fatias de pão, coloque as fatias de mussarela de búfala (opcional)",
+      "Coloque por cima de cada uma um pouco da mistura e sirva ainda quentinho, finalize com folhinhas de manjericão e volte com as torradas ao forno por de 5 a 10 minutos"
+    ],
+    "nutritionalInfo": "Aporte de vitamina A, complexo B, fósforo, cálcio e a semente é muito rica em ferro. Tem poucas calorias e é de fácil digestão.",
+    "createdAt": 1517512756,
+    "updatedAt": 1517512756
+  },
+  { 
+    "id": "003",
+    "name": "Quiche de Alho Poró",
+    "author": "Cátia Valerio",
+    "mainImage": "https://img.itdg.com.br/tdg/images/recipes/000/013/569/128828/128828_original.jpg?mode=crop&width=370&height=278",
+    "tags": ["quiche","alho poró"],
+    "difficultyLevel": 2,
+    "preparationTime": 40,
+    "preparationUnit": "minute",
+    "yieldsPortion": 10,
+    "description": "Deliciosa quiche de alho poró. Fácil de preparar.",
+    "ingredients": [
+      "Massa", 
+      [
+        "1 xícara e 1/2 de farinha de trigo",
+        "100 g de margarina",
+        "1/2 lata de creme de leite sem soro",
+        "1 colher de chá de sal",
+        "1 colher de chá de fermento em pó"
+      ],
+      "Recheio", 
+      [
+        "2 colheres de sopa de manteiga",
+        "1 colher de sopa de cebola",
+        "2 colheres de sopa de farinha de trigo",
+        "300 ml de leite",
+        "2 gemas",
+        "1/2 pacote de queijo ralado",
+        "1/2 lata de creme de leite sem soro",
+        "2 alhos poró",
+        "1/2 xícara de cebolinha verde",
+        "Temperos a gosto"
+      ],
+      "Cobertura",
+      [
+        "2 claras",
+        "3 colheres de sopa de queijo ralado",
+        "Queijo para polvilhar"
+      ]
+    ],
+    "preparation": [
+      "Massa", 
+      [
+        "Em um recipiente, coloque a farinha (reserve um pouco), a margarina ou manteiga, creme de leite (sem soro), o sal e o fermento",
+        "Misture com as mãos (neste momento, se necessário, utilize a farinha reservada)",
+        "Sove sobre superfície levemente enfarinhada",
+        "Deixe descansar por 10 minutos (opcional)",
+        "Distribua a massa em uma assadeira redonda n°25 (não precisa untar)",
+        "Fure com auxílio de um garfo toda a superfície",
+        "Leve ao forno 200° graus por 10 minutos (pré-asse a massa)"
+      ],
+      "Recheio",
+      [
+        "Em uma panela, derreta a manteiga e refogue a cebola",
+        "Coloque a farinha e mexa",
+        "Junte o leite aos poucos, sempre mexendo, até engrossar",
+        "A seguir, adicione o sal, pimenta, gemas, creme de leite, queijo ralado, cebolinha ou salsinha e o alho poro fatiado e aferventado previamente",
+        "Misture"
+      ],
+      "Cobertura",
+      [
+        "Na vasilha da batedeira coloque as claras e bata em neve",
+        "Desligue",
+        "Adicione o queijo ralado e misture com auxílio de uma colher"
+      ]
+    ],
+    "nutritionalInfo": "Aporte de vitamina A, complexo B, fósforo, cálcio e a semente é muito rica em ferro. Tem poucas calorias e é de fácil digestão.",
+    "createdAt": 1517512756,
+    "updatedAt": 1517512756
+  }
+]

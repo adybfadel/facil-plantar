@@ -1,0 +1,10 @@
+{
+    "AppSyncApiName": "FacilPlantar",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authcognitoa6bf6348",
+            "Outputs.UserPoolId"
+        ]
+    }
+}
